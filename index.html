@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>crud</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+<main class="container">
+    <header>
+        <h1>Lista de compras</h1>
+        <button onclick="openModal()" id="new">Incluir Item</button>
+    </header>
+
+    <div class ="divTable">
+        <table>
+            <thead>
+                <tr>
+                    <th>Produto</th>
+                    <th>Quantidade</th>
+                    <th>Preço esperado</th>
+                    <th>Detalhe</th>
+                    <th>Alternativa</th>
+                    <th class="acao">Editar</th>
+                    <th class="acao">Excluir</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    <div class="modal-container">
+        <div class="modal">
+            <form>
+                <label for="m-produto">Produto</label>
+                <input id="m-produto" type="text" required />
+                
+                <label for="m-quantidade">Quantidade</label>
+                <input id="m-quantidade" type="number" required />
+                
+                <label for="m-preço-esperado">Preço esperado</label>
+                <input id="m-preço-esperado" type="number" required />
+                
+                <label for="m-detalhe">Detalhe</label>
+                <input id="m-detalhe" type="text" required />
+                
+                <label for="m-alternativa">Alternativa</label>
+                <input id="m-alternativa" type="text" required />
+                
+                <button id="btnSalvar">Salvar</button>
+                <button type="button" onclick="modal.classList.remove('active')">Cancelar</button>
+            </form>
+        </div>
+        
+    </div>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
