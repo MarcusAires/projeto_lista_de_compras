@@ -141,6 +141,40 @@ tbody tr td.acao {
     font-size: 12px!important;
   }
 }
+@media (max-width: 500px) {
+  body {
+    font-size: 8px;
+  }
+  .header span {
+    font-size: 10px;
+  }
+
+  #new {
+    padding: 3px;
+    font-size: 8px;
+  }
+
+  thead tr th.acao {
+    width: auto!important;
+  }
+  
+  td button i {
+    font-size: 15px!important;
+  }
+
+  td button i:first-child {
+    margin-right: 0;
+  }
+
+  .modal {
+    width: 80%!important;
+  }
+
+  .modal label {
+    font-size: 10px!important;
+  }
+}
+
 
 .modal-container {
   width: 100vw;

@@ -2,9 +2,8 @@ const modal = document.querySelector('.modal-container');
 const tbody = document.querySelector('tbody');
 const sProduto = document.querySelector('#m-produto');
 const sQuantidade = document.querySelector('#m-quantidade');
-const sPrecoEsperado = document.querySelector('#m-preço-esperado');
+const sPreco = document.querySelector('#m-preço');
 const sDetalhe = document.querySelector('#m-detalhe');
-const sAlternativa = document.querySelector('#m-alternativa');
 const btnSalvar = document.querySelector('#btnSalvar')
 
 let itens
@@ -30,9 +29,8 @@ function insertItem(item,index){
     tr.innerHTML = `
         <td>${item.produto}</td>
         <td>${item.quantidade}</td>
-        <td>R$ ${item.preco_esperado}</td>
+        <td>R$ ${item.preco}</td>
         <td>${item.detalhe}</td>
-        <td>${item.alternativa}</td>
         <td class="acao">
             <button onclick="editItem(${index})"><i class="bx bx-edit"></i></button>
         </td>
@@ -66,20 +64,18 @@ function openModal(edit= false, index = 0){
     if(edit){
         sProduto.value = itens[index].produto
         sQuantidade.value = itens[index].quantidade
-        sPrecoEsperado.value = itens[index].preco_esperado
+        sPreco.value = itens[index].preco
         sDetalhe.value = itens[index].detalhe
-        sAlternativa.value = itens[index].alternativa
         id = index
     } else{
     sProduto.value = '';
     sQuantidade.value = '';
-    sPrecoEsperado.value='';
+    sPreco.value='';
     sDetalhe.value ='';
-    sAlternativa.value='';
     }
 }
 btnSalvar.onclick = e => {
-    if (sProduto.value == '' || sQuantidade.value == '' || sPrecoEsperado.value == '' || sDetalhe.value == '' || sAlternativa.value == '') {
+    if (sProduto.value == '' || sQuantidade.value == '' || sPreco.value == '' || sDetalhe.value == '') {
         return
     }
 
@@ -88,16 +84,14 @@ btnSalvar.onclick = e => {
     if (id != undefined) {
         itens[id].produto = sProduto.value
         itens[id].quantidade = sQuantidade.value
-        itens[id].preco_esperado = sPrecoEsperado.value
+        itens[id].preco = sPreco.value
         itens[id].detalhe = sDetalhe.value
-        itens[id].alternativa = sAlternativa.value
     } else {
         itens.push({
             'produto': sProduto.value,
             'quantidade': sQuantidade.value,
-            'preco_esperado': sPrecoEsperado.value,
+            'preco_esperado': sPreco.value,
             'detalhe': sDetalhe.value,
-            'alternativa': sAlternativa.value
         });
     }
     
