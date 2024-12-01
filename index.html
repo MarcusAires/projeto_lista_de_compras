@@ -1,59 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>crud</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-</head>
-<body>
-<main class="container">
-    <header>
-        <h1>Lista de compras</h1>
-        <button onclick="openModal()" id="new">Incluir Item</button>
-    </header>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>crud</title>
+        <link rel="stylesheet" href="styles.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    </head>
+    <body>
+    <main class="container">
+        <header>
+            <h1>Lista de compras</h1>
+            <button onclick="openModal()" id="new">Incluir Item</button>
+        </header>
 
-    <div class ="divTable">
-        <table>
-            <thead>
-                <tr>
-                    <th>Produto</th>
-                    <th>Quantidade</th>
-                    <th>Preço</th>
-                    <th>Detalhe</th>
-                    <th class="acao">Editar</th>
-                    <th class="acao">Excluir</th>
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
-    </div>
-    <div class="modal-container">
-        <div class="modal">
-            <form>
-                <label for="m-produto">Produto</label>
-                <input id="m-produto" type="text" required />
-                
-                <label for="m-quantidade">Quantidade</label>
-                <input id="m-quantidade" type="number" required />
-                
-                <label for="m-preço">Preço</label>
-                <input id="m-preço" type="number" required />
-                
-                <label for="m-detalhe">Detalhe</label>
-                <input id="m-detalhe" type="text" required />
-                
-                <button id="btnSalvar">Salvar</button>
-                <button type="button" onclick="modal.classList.remove('active')">Cancelar</button>
-            </form>
+        <div class="divTable">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Quantidade</th>
+                        <th>Preço</th>
+                        <th>Detalhe</th>
+                        <th class="acao">Editar</th>
+                        <th class="acao">Excluir</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+                <tfoot id="tfoot">
+                    <!-- O total será inserido aqui dinamicamente -->
+                </tfoot>
+            </table>
         </div>
         
-    </div>
+        <div class="modal-container">
+            <div class="modal">
+                <form>
+                    <label for="m-produto">Produto</label>
+                    <input id="m-produto" type="text" required />
+                    
+                    <label for="m-quantidade">Quantidade</label>
+                    <input id="m-quantidade" type="number" required />
+                    
+                    <label for="m-preço">Preço</label>
+                    <input id="m-preço" type="number" required />
+                    
+                    <label for="m-detalhe">Detalhe</label>
+                    <input id="m-detalhe" type="text" required />
+                    
+                    <button id="btnSalvar">Salvar</button>
+                    <button type="button" onclick="modal.classList.remove('active')">Cancelar</button>
+                </form>
+            </div>
+            
+        </div>
 
-</main>
+    </main>
 
-<script src="script.js"></script>
-</body>
-</html>
+    <script src="script.js"></script>
+    </body>
+    </html>
