@@ -104,7 +104,7 @@ btnSalvar.onclick = (e) => {
 
 // Função para calcular o total
 function calculateTotal() {
-    return itens.reduce((total, item) => total + parseFloat(item.preco), 0).toFixed(2);
+    return itens.reduce((total, item) => total + (parseFloat(item.preco) * parseInt(item.quantidade)), 0).toFixed(2);
 }
 
 // Função para atualizar a linha do total
